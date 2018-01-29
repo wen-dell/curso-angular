@@ -1,0 +1,21 @@
+<section class="property-binding">
+
+  <article>
+    <h3>Interpolation / Interpolação</h3>
+    <p>String renderizada com interpolação: {{ url }}</p>
+    <p>A expressão (1000 + 2) / 5 resulta em: {{ (1000 + 2) / 5}}</p>
+  </article>
+
+  <article>
+    <h3>Property binding</h3>
+    <p>Usando interpolação:</p>
+    <img src="{{urlImagem}}" width="400" height="400">
+
+    <p>Usando property binding:</p>
+    <img [src]="urlImagem" width="400" height="400">
+    
+    <p>Usando bind-src:</p>
+    <img bind-src="urlImagem" width="400" height="400">
+  </article>
+
+</section>
