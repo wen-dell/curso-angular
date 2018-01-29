@@ -1,5 +1,12 @@
 <p>
-  Cursos componente!
+  Lista de cursos do portal {{ nomePortal }}
 </p>
 
 <app-curso-detalhe></app-curso-detalhe>
+
+<ul>
+  <li *ngFor="let curso of cursos; let i = index; let isFirst = first; let isLast = last; let isOdd = odd; let isEven = even;">
+    {{i}} - {{ curso }} -> {{ isFirst ? 'Primeiro' : 'Não é primeiro' }}, {{ isLast ? 'Último': 'Não é último' }}, {{isOdd? 'É
+    ímpar': 'Não é impar'}}, {{isEven? 'É par': 'Não é par'}}
+  </li>
+</ul>
