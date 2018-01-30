@@ -1,6 +1,6 @@
 <section class="property-binding">
 
-  <article>
+  <!-- <article>
     <h3>Interpolation / Interpolação</h3>
     <p>String renderizada com interpolação: {{ url }}</p>
     <p>A expressão (1000 + 2) / 5 resulta em: {{ (1000 + 2) / 5}}</p>
@@ -16,6 +16,108 @@
     
     <p>Usando bind-src:</p>
     <img bind-src="urlImagem" width="400" height="400">
+  </article> -->
+
+  <!-- <article>
+    <h3>Class e Style Binding</h3>
+    <div>Selecione uma classe:
+      <select #classe (change)="0">
+        <option value="alert-success">Successo</option>
+        <option value="alert-info">Info</option>
+        <option value="alert-warning">Alerta</option>
+        <option value="alert-danger">Erro</option>
+      </select>
+      <br><br>
+
+      <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">Sucesso</div>
+      <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">Info</div>
+      <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">Alerta</div>
+      <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">Aviso</div>
+
+      <div class="alert alert-danger" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'" role="alert">Texto só aparece em caso de erro...</div>
+
+      <div class="alert {{ classe.value }}">
+        Texto colorido conforme valor do combobox.
+      </div>
+
+      <hr>
+
+      <h3>Meu exemplo de Class Binding</h3>
+
+      <select #label (change)="0">
+        <option value="label-default">Padrão</option>
+        <option value="label-primary">Principal</option>
+        <option value="label-success">Sucesso</option>
+        <option value="label-info">Info</option>
+        <option value="label-warning">Aviso</option>
+        <option value="label-danger">Perigo</option>
+      </select>
+
+      <span class="label" [class.label-default]="label.value == 'label-default'">Padrão</span>
+      <span class="label" [class.label-primary]="label.value == 'label-primary'">Principal</span>
+      <span class="label" [class.label-success]="label.value == 'label-success'">Successo</span>
+      <span class="label" [class.label-info]="label.value == 'label-info'">Info</span>
+      <span class="label" [class.label-warning]="label.value == 'label-warning'">Aviso</span>
+      <span class="label" [class.label-danger]="label.value == 'label-danger'">Perigo</span>
+
+      <h3>Meu exemplo de Style Binding</h3>
+
+      <p [style.display]="label.value == 'label-success' ? 'block' : 'none'">Apareci!</p>
+    </div>
+  </article>
+  <article>
+    <h3>Event binding</h3>
+
+    <div>
+      <button class="btn btn-primary" (click)="botaoClicado()">Me clique!</button>
+
+      <br><br>
+
+      <input type="text" 
+        (keyup)="onKeyUp($event)" 
+        (keyup.enter)="salvarValor($event.target.value)"
+        (blur)="salvarValor(campoInput.value)"
+        #campoInput>
+
+      <p>Valor atual: {{ valorAtual }}</p>
+      <p>Valor salvo: {{ valorSalvo }}</p>
+
+      <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.highlight]="isMouseOver">Passe o mouse sobre mim!</span>
+
+      <hr>
+
+      <button class="btn btn-success" (click)="exibirMensagem()">Exibir mensagem</button>
+
+      <input type="text" (keyup)="verificarEntrada($event)">
+    </div>
+  </article>-->
+
+  <article>
+    <h3>Two-way data binding</h3>
+    <div>
+
+      <input type="text" [value]="nome" (input)="nome = $event.target.value" />
+      <p>Você digitou: {{ nome }}</p>
+
+      <input type="text" [ngModel]="nome" (ngModelChange)="nome = $event" />
+      <p>Você digitou: {{ nome }}</p>
+
+      <input type="text" [(ngModel)]="nome">
+      <p>Você digitou: {{ nome }}</p>
+
+      <div>
+
+        <p>Meu nome é
+          <span style="background-color: yellow;">{{ pessoa.nome }}</span> e tenho
+          <span style="background-color:blueviolet; color: white;">{{ pessoa.idade }}</span> anos de idade.
+        </p>
+
+        <input type="text" [(ngModel)]="pessoa.nome">
+        <input type="text" [(ngModel)]="pessoa.idade">
+
+      </div>
+
+    </div>
   </article>
 
 </section>
