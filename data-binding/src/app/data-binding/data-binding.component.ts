@@ -14,6 +14,7 @@ export class DataBindingComponent implements OnInit {
   isMouseOver: boolean = false;
   ativada: boolean = false;
   nome: string = 'abc';
+  valorInicial: number = 15;
 
   pessoa: any = {
     nome: 'Wendell',
@@ -54,6 +55,10 @@ export class DataBindingComponent implements OnInit {
         alert("Tecla Capslock está ativada!");
       }
     }
+  }
+
+  onMudouValor(evento) {
+    console.log(evento);
   }
 
 }

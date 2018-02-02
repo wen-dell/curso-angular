@@ -1,0 +1,22 @@
+div {
+    background-color: #0e97b9;
+    width: 300px;
+    margin: 10px;
+    padding: 5px;
+}
+
+div:hover {
+    background-color: #0e85a3;
+}
+
+div > * {
+    text-align: center;
+}
+
+h3, p {
+    color: white;
+}
+
+p {
+    font-weight: bold;
+}
