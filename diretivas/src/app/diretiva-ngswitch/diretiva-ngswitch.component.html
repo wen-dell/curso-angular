@@ -1,0 +1,17 @@
+
+<h5>ngSwitch</h5>
+
+<p>Dia: {{ diaSemana }}</p>
+<button type="button" (click)="voltar()">Voltar dia</button>
+<button type="button" (click)="passar()">Passar dia</button>
+
+<div [ngSwitch]="diaSemana">
+  <p *ngSwitchCase="1">Segunda-feira</p>
+  <p *ngSwitchCase="2">Terça-feira</p>
+  <p *ngSwitchCase="3">Quarta-feira</p>
+  <p *ngSwitchCase="4">Quinta-feira</p>
+  <p *ngSwitchCase="5">Sexta-feira</p>
+  <p *ngSwitchCase="6">Sábado</p>
+  <p *ngSwitchCase="7">Domingo</p>
+  <p *ngSwitchDefault>Dia inválido</p>
+</div>

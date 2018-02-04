@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiretivaNgifComponent implements OnInit {
 
+  mostrarMensagem: boolean = false;
+  isHidden: boolean = true;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onMostrarMensagem() {
+    this.mostrarMensagem = !this.mostrarMensagem;
+  }
+
+  onHidden() {
+    this.isHidden = !this.isHidden;
   }
 
 }

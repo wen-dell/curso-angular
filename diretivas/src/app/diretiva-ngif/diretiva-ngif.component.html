@@ -1,3 +1,12 @@
-<p>
-  diretiva-ngif works!
-</p>
+<h5>*ngIf</h5>
+
+<p *ngIf="mostrarMensagem">Olá!</p>
+
+<button type="button" (click)="onMostrarMensagem()">Mostrar mensagem</button>
+
+<h5>Usando hidden</h5>
+
+<p [hidden]="!isHidden">Primeira mensagem</p>
+<p [hidden]="isHidden">Segunda mensagem</p>
+
+<button type="button" (click)="onHidden()">Usar hidden</button>
