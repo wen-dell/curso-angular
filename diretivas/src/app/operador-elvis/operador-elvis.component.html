@@ -1,0 +1,32 @@
+<h2>Responsáveis e suas tarefas:</h2>
+
+<table>
+  <tr>
+    <th>
+      Descrição da tarefa
+    </th>
+    <th>
+      Prioridade
+    </th>
+    <th>
+      Nome do responsável
+    </th>
+    <th>
+      Idade do responsável
+    </th>
+  </tr>
+  <tr *ngFor="let tarefa of tarefas">
+    <td>
+      {{ tarefa.descricao }}  
+    </td>
+    <td>
+      {{ tarefa.prioridade }}
+    </td>
+    <td>
+      {{ tarefa.responsavel?.nome }}
+    </td>
+    <td>
+      {{ tarefa.responsavel?.idade }}
+    </td>
+  </tr>
+</table>
