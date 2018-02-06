@@ -7,11 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiretivasCustomizadasComponent implements OnInit {
 
+  mostrarMensagem: boolean = false;
+
   constructor() { 
     
   }
 
   ngOnInit() {
+  }
+
+  onMostrarMensagem() {
+    this.mostrarMensagem = !this.mostrarMensagem;
   }
 
 }

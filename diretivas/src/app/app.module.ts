@@ -14,6 +14,8 @@ import { DiretivasCustomizadasComponent } from './diretivas-customizadas/diretiv
 import { TextoAzulDirective } from './shared/texto-azul.directive';
 import { HighlightMouseDirective } from './shared/highlight-mouse.directive';
 import { CampoCresceDirective } from './shared/campo-cresce.directive';
+import { HighlightDirective } from './shared/highlight.directive';
+import { NgElseDirective } from './shared/ng-else.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { CampoCresceDirective } from './shared/campo-cresce.directive';
     DiretivasCustomizadasComponent,
     TextoAzulDirective,
     HighlightMouseDirective,
-    CampoCresceDirective
+    CampoCresceDirective,
+    HighlightDirective,
+    NgElseDirective
   ],
   imports: [
     BrowserModule

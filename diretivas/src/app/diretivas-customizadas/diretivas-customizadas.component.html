@@ -11,3 +11,12 @@
 </p>
 
 <input type="text" placeholder="Insira seu nome" campoCresce>
+
+<p highlight [defaultColor]="'grey'" [highlightColor]="'red'">
+  Texto com highlight com cores customizadas
+</p>
+
+<p *ngIf="mostrarMensagem">Olá!</p>
+<p *ngElse="mostrarMensagem">Não existem mensagens!</p>
+
+<button type="button" (click)="onMostrarMensagem()">Mostrar mensagem</button>
