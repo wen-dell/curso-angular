@@ -10,3 +10,25 @@
 <p>Livro: {{ livro | json }}</p>
 
 <p>Existem {{ quantidade | plural:"aluno" }} na sala de aula</p>
+
+<h5>Lista de livros</h5>
+
+<input type="text" [(ngModel)]="filtro">
+
+<input type="text" #novoValor>
+<button type="button" (click)="addLivro(novoValor.value)">Add livro</button>
+
+<h5>Pipe puro</h5>
+
+<ul>
+    <li *ngFor="let livro of livros | filtroArray:filtro">{{ livro }}</li>
+</ul>
+
+<h5>Pipe impuro</h5>
+
+<ul>
+    <li *ngFor="let livro of livros | filtroArrayImpuro:filtro">{{ livro }}</li>
+</ul>
+
+<p>{{ valorAsync | async }}</p>
+<p>{{ valorAsync2 | async }}</p>
