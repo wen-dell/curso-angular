@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from 'app/login/login.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  mostrarMenu: boolean = false;
+
+  constructor(private loginService: LoginService) {
+    this.loginService.mostrarMenuEmitter.subscribe(
+      mostrar => this.mostrarMenu = mostrar
+    );
+  }
 }
