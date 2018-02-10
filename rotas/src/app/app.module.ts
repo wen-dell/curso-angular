@@ -8,6 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app.routing.module';
 import { LoginService } from './login/login.service';
 import { AuthGuard } from 'app/guards/auth.guard';
+import { CursosGuard } from 'app/guards/cursos.guard';
+import { AlunosGuard } from 'app/guards/alunos.guard';
 //import { routing } from './app.routing';
 
 
@@ -22,7 +24,11 @@ import { AuthGuard } from 'app/guards/auth.guard';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [LoginService, AuthGuard],
+  providers: [
+    LoginService,
+    AuthGuard,
+    CursosGuard,
+    AlunosGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
