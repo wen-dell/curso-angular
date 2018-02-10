@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app.routing.module';
 import { LoginService } from './login/login.service';
+import { AuthGuard } from 'app/guards/auth.guard';
 //import { routing } from './app.routing';
 
 
@@ -18,11 +19,10 @@ import { LoginService } from './login/login.service';
   ],
   imports: [
     BrowserModule,
-    MaterializeModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [LoginService],
+  providers: [LoginService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
