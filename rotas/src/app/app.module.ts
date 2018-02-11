@@ -10,6 +10,7 @@ import { LoginService } from './login/login.service';
 import { AuthGuard } from 'app/guards/auth.guard';
 import { CursosGuard } from 'app/guards/cursos.guard';
 import { AlunosGuard } from 'app/guards/alunos.guard';
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 //import { routing } from './app.routing';
 
 
@@ -17,7 +18,8 @@ import { AlunosGuard } from 'app/guards/alunos.guard';
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    PaginaNaoEncontradaComponent
   ],
   imports: [
     BrowserModule,
