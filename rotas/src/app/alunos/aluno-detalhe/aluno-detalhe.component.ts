@@ -20,11 +20,16 @@ export class AlunoDetalheComponent implements OnInit {
      private router: Router) { }
 
   ngOnInit() {
-    let id: number;
+    /*let id: number;
     this.inscricao = this.route.params.subscribe(
       (params: any) => {
         id = params['id'];
         this.aluno = this.alunoService.getAluno(id);
+      }
+    );*/
+    this.inscricao = this.route.data.subscribe(
+      (info) => {
+        this.aluno = info.aluno;
       }
     );
   }
