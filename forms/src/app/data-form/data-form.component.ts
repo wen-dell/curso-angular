@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Http } from '@angular/http';
 
+import { Estado } from './../shared/estado';
+import { DropdownService } from 'app/shared/dropdown.service';
+
 @Component({
   selector: 'app-data-form',
   templateUrl: './data-form.component.html',
@@ -10,8 +13,13 @@ import { Http } from '@angular/http';
 export class DataFormComponent implements OnInit {
 
   formulario: FormGroup;
+  estados: Estado[];
 
-  constructor(private formBuilder: FormBuilder, private http: Http) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: Http,
+    private dropdownService: DropdownService
+  ) { }
 
   ngOnInit() {
     this.formulario = this.formBuilder.group({
@@ -27,6 +35,9 @@ export class DataFormComponent implements OnInit {
         estado: [null, Validators.required]
       })
     });
+
+    this.dropdownService.getEstadosBr()
+    .subscribe(estados => this.estados = estados);
   }
 
   consultaCEP() {
