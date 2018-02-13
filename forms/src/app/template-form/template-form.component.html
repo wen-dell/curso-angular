@@ -51,7 +51,7 @@
         <label for="rua" class="control-label">Rua</label>
       </div>
       <div class="col-sm-12">
-        <input type="text" class="form-control" id="rua" name="rua" ngModel required #rua="ngModel" readonly>
+        <input type="text" class="form-control" id="rua" name="rua" ngModel required #rua="ngModel">
 
         <app-campo-control-erro [mostrarErro]="verificaValidTouched(rua)" msgErro="Rua é obrigatória."></app-campo-control-erro>
       </div>
