@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Http } from '@angular/http';
 
 @Component({
@@ -14,15 +14,28 @@ export class DataFormComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private http: Http) { }
 
   ngOnInit() {
-    /*this.formulario = new FormGroup({
-      nome: new FormControl(null),
-      email: new FormControl(null)
-    });*/
-
     this.formulario = this.formBuilder.group({
-      nome: [null],
-      email: [null]
+      nome: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]]
     });
+  }
+
+  verificaValidTouched(campo) {
+    return !this.formulario.get(campo).valid && this.formulario.get(campo).touched;
+  }
+
+  verificaEmailInvalido() {
+    let campoEmail = this.formulario.get('email');
+    if (campoEmail.errors) {
+      return campoEmail.errors['email'] && campoEmail.touched;
+    }
+  }
+
+  aplicaCSSErro(campo) {
+    return {
+      'has-error': this.verificaValidTouched(campo),
+      'has-feedback': this.verificaValidTouched(campo)
+    }
   }
 
   onSubmit() {
